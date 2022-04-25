@@ -60,6 +60,11 @@ Resources:
         Key: README.md
         ContentType: text/plain
       Body: Hello, world!
+      Metadata:
+        Bucket: !Ref Bucket
+        Key: README.md
+        S3Uri: !Sub "s3://${Bucket}/README.md"
+        Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/README.md"
 ```
 
 ## Features
@@ -81,6 +86,11 @@ NewObject:
       This is my text file;
       there are many like it,
       but this one is mine.
+    Metadata:
+      Bucket: !Ref Bucket
+      Key: README.md
+      S3Uri: !Sub "s3://${Bucket}/README.md"
+      Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/README.md"
 ```
 
 The `Target` property has the following sub-properties:
@@ -109,6 +119,11 @@ SinglePixel:
       Bucket: !Ref TargetBucket
       Key: 1pixel.gif
     Base64Body: R0lGODdhAQABAIABAP///0qIbCwAAAAAAQABAAACAkQBADs=
+    Metadata:
+      Bucket: !Ref Bucket
+      Key: 1pixel.gif
+      S3Uri: !Sub "s3://${Bucket}/1pixel.gif"
+      Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/1pixel.gif"
 ```
 
 ### Copying an S3 object from another bucket
@@ -126,6 +141,11 @@ CopiedObject:
       Bucket: !Ref TargetBucket
       Key: index.html
       ACL: public-read
+    Metadata:
+      Bucket: !Ref Bucket
+      Key: index.html
+      S3Uri: !Sub "s3://${Bucket}/index.html"
+      Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/index.html"
 ```
 
 The `Source` property has the following sub-properties:
