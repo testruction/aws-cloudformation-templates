@@ -34,7 +34,7 @@ Resources:
       Base64Body: R0lGODdhAQABAIABAP///0qIbCwAAAAAAQABAAACAkQBADs=
       Metadata:
         Bucket: !Ref Bucket
-        Key: README.md
+        Key: 1-pixel.gif
         S3Uri: !Sub "s3://${Bucket}/1-pixel.gif"
         Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/1-pixel.gif"
         
@@ -50,6 +50,6 @@ Resources:
         ACL: public-read
       Metadata:
         Bucket: !Ref Bucket
-        Key: README.md
+        Key: README-copy.md
         S3Uri: !Sub "s3://${Bucket}/README-copy.md"
         Url: !Sub "https://${Bucket}.s3.${AWS::Region}.amazonaws.com/README-copy.md"
